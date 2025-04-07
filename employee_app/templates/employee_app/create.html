@@ -1,0 +1,30 @@
+
+{% extends 'employee_app/base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Employee</title>
+</head>
+<body>
+    <h1>Create New Employee</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'employee_list' %}">Back to Employee List</a>
+</body>
+</html>
+
+'<!-- 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'employee_db',
+        'USER': 'django_user',
+        'PASSWORD': 'password123',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+} -->'
+

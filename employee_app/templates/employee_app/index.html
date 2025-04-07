@@ -1,0 +1,17 @@
+
+{% extends 'employee_app/base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee List</title>
+</head>
+<body>
+    <h1>All Employees</h1>
+    <ul>
+        {% for employee in employees %}
+            <li>{{ employee.name }} - {{ employee.email }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_employee' %}">Add New Employee</a>
+</body>
+</html>
